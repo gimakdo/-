@@ -103,7 +103,9 @@ if selected_tab == "기업 소개":
     description = company_info['description']
     desired_skills = company_info['desired_skills']
     logo_url = company_info['logo_url']
- st.image(logo_url, caption=f"{selected_company} 로고", use_column_width=True)
+
+    # 기업 로고 이미지 표시
+    st.image(logo_url, caption=f"{selected_company} 로고", use_column_width=True)
 
     # 기업 소개 표시
     st.subheader(f"{selected_company} 소개")
@@ -130,16 +132,14 @@ elif selected_tab == "주가 그래프":
         return history
 
     # 최신화 버튼을 클릭하여 데이터 갱신
-    update_button = st.button('최신화')
+    update_button = st.button('갱신')
     if update_button or selected_company not in st.session_state.company_data:
         st.session_state.company_data[selected_company] = update_data(ticker)
         st.session_state.last_updated_time[selected_company] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # 최신화 시간 표시
     if selected_company in st.session_state.last_updated_time:
-        st.write(f"데이터 최신화 시간: {st.session_state.last_updated_time[selected_company]}")
-    # 기업 로고 이미지 표시
-    st.image(logo_url, caption=f"{selected_company} 갱신 시간: {st.session_state.last_updated_time[selected_company]}")
+        st.write(f"데이터 갱신 시간: {st.session_state.last_updated_time[selected_company]}")
 
     # 주가 그래프를 그리는 함수
     def draw_stock_chart(history):
