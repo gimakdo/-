@@ -166,7 +166,6 @@ elif selected_tab == "주가 그래프":
     ax_market_cap.plot(history.index, history['Market Cap'], label='Market Capitalization', linestyle='-', color='r')
     ax_market_cap.set_xlabel('Date')
     ax_market_cap.set_ylabel('Market Capitalization (USD)')
-    ax_market_cap.set_title(f"{selected_company} 시가총액 그래프", fontsize=14, fontweight='bold')
     ax_market_cap.legend()
     ax_market_cap.grid(True)  # 그리드 추가
     ax_market_cap.yaxis.set_major_formatter(ScalarFormatter(useOffset=False, useMathText=True))  # 과학적 표기법 사용하지 않도록 설정
