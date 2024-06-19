@@ -144,9 +144,9 @@ elif selected_tab == "주가 그래프":
     # 주가 그래프를 그리는 함수
     def draw_stock_chart(history):
         fig, ax = plt.subplots()
-        ax.plot(history.index, history['Close'], label='종가', linestyle='-', color='b')
-        ax.set_xlabel('날짜')
-        ax.set_ylabel('주가 (USD)')
+        ax.plot(history.index, history['Close'], label='Stock Closing Price', linestyle='-', color='b')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Stock Price (USD)')
         ax.set_title(f"{selected_company} 주가 그래프", fontsize=14, fontweight='bold')
         ax.legend()
         ax.grid(True)  # 그리드 추가
@@ -164,9 +164,9 @@ elif selected_tab == "주가 그래프":
     history['Shares Outstanding'] = yf.Ticker(ticker).info['sharesOutstanding']
     history['Market Cap'] = history['Close'] * history['Shares Outstanding']
     fig_market_cap, ax_market_cap = plt.subplots()
-    ax_market_cap.plot(history.index, history['Market Cap'], label='시가총액', linestyle='-', color='r')
-    ax_market_cap.set_xlabel('날짜')
-    ax_market_cap.set_ylabel('시가총액 (USD)')
+    ax_market_cap.plot(history.index, history['Market Cap'], label='Market Capitalization', linestyle='-', color='r')
+    ax_market_cap.set_xlabel('Date')
+    ax_market_cap.set_ylabel('Market Capitalization (USD)')
     ax_market_cap.set_title(f"{selected_company} 시가총액 그래프", fontsize=14, fontweight='bold')
     ax_market_cap.legend()
     ax_market_cap.grid(True)  # 그리드 추가
