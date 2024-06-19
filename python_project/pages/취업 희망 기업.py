@@ -27,6 +27,7 @@ from datetime import datetime
 
 # 윈도우에서 Malgun Gothic 폰트를 Matplotlib에 설정
 plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] =False
 
 # 초기 세션 상태 설정
 if 'company_data' not in st.session_state:
