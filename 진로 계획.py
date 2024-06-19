@@ -10,7 +10,7 @@ st.set_page_config(  # 페이지 설정
 st.sidebar.header("진로 계획")  # 사이드바에 헤더 작성
 
 st.subheader("홍익대학교 전자전기공학부 전공체계도")  # st.markdown()을 이용한 헤더 작성
-st.image('C:/Users/82102/OneDrive/바탕 화면/과제/h 2/파이썬 프로그래밍/프로젝트/이수체계도.jpg')
+st.image('https://cn.hongik.ac.kr/file/Isu/A040.jpg')
 st.markdown(""" 홍익대 전자전기공학부는 크게 반도체 공학, 통신공학, 전기공학 트랙으로 나눠져 있습니다.\n 
 이 중에서 저는 반도체공학 트랙에 관심이 있습니다. \n
 졸업 후 진로도 반도체 기업 분야로 취업을 희망하고 있습니다.\n
@@ -25,7 +25,6 @@ st.subheader(
 tab1,tab2,tab3 =st.tabs(['2학년','3학년','4학년'])
 
 with tab1:
-    st.image('C:/Users/82102/OneDrive/바탕 화면/과제/h 2/파이썬 프로그래밍/프로젝트/2학년 과목.png')
     st.write("""
             2학년은 전공 지식과 관련해서 기초를 쌓는 과목들이 많습니다. \n
             전기회로이론 과목으로 RLC 회로에 관한 기초를 배웁니다. \n
@@ -39,7 +38,6 @@ with tab1:
 
              """)
 with tab2:
-    st.image('C:/Users/82102/OneDrive/바탕 화면/과제/h 2/파이썬 프로그래밍/프로젝트/3학년 과목.png')
     st.write("""
             3학년은 본격적으로 전공에 관련해서 배웁니다.\n
             제가 관심있는 반도체 분야는 크게 반도체 공정과 회로설계입니다. \n
@@ -53,7 +51,6 @@ with tab2:
             
              """)
 with tab3:
-    st.image('C:/Users/82102/OneDrive/바탕 화면/과제/h 2/파이썬 프로그래밍/프로젝트/4학년 과목.png')
     st.write("""
             4학년은 취업 준비와 함께 학업을 병행할 생각입니다.\n
             졸업요건과 관련된 it 시스템 설계와 it 종합설계 프로젝트를 진행합니다. \n
