@@ -147,7 +147,6 @@ elif selected_tab == "주가 그래프":
         ax.plot(history.index, history['Close'], label='Stock Closing Price', linestyle='-', color='b')
         ax.set_xlabel('Date')
         ax.set_ylabel('Stock Price (USD)')
-        ax.set_title(f"{selected_company} 주가 그래프", fontsize=14, fontweight='bold')
         ax.legend()
         ax.grid(True)  # 그리드 추가
         ax.yaxis.set_major_formatter(ScalarFormatter(useOffset=False, useMathText=True))  # 과학적 표기법 사용하지 않도록 설정
