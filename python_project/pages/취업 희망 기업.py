@@ -105,41 +105,7 @@ if selected_tab == "기업 소개":
     logo_url = company_info['logo_url']
 
     # 기업 로고 이미지 표시
-    st.image(logo_url, caption=f"{selected_company} 로고", use_column_width=True)
-
-    # 기업 소개 표시
-    st.subheader(f"{selected_company} 소개")
-    st.markdown(description)
-    st.markdown(desired_skills)
-
-    # 기업 웹사이트 링크 표시
-    st.subheader("공식 웹사이트")
-    st.write(f"[{selected_company} 공식 웹사이트]({website})")
-
-elif selected_tab == "주가 그래프":
-    # 사이드바를 사용하여 회사 선택
-    selected_company = st.sidebar.selectbox("회사를 선택하세요:", list(companies.keys()))
-
-    # 선택한 회사의 정보
-    company_info = companies[selected_company]
-    ticker = company_info['ticker']
-    website = company_info['website']
-
-    # 데이터 가져오기 및 업데이트 함수 정의
-    def update_data(ticker):
-        stock_data = yf.Ticker(ticker)
-        history = stock_data.history(period="1y")
-        return history
-
-    # 최신화 버튼을 클릭하여 데이터 갱신
-    update_button = st.button('최신화')
-    if update_button or selected_company not in st.session_state.company_data:
-        st.session_state.company_data[selected_company] = update_data(ticker)
-        st.session_state.last_updated_time[selected_company] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # 최신화 시간 표시
-    if selected_company in st.session_state.last_updated_time:
-        st.write(f"데이터 최신화 시간: {st.session_state.last_updated_time[selected_company]}")
+    st.image(logo_url, caption=f"{selected신 시간: {st.session_state.last_updated_time[selected_company]}")
 
     # 주가 그래프를 그리는 함수
     def draw_stock_chart(history):
